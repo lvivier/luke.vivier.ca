@@ -1,0 +1,8 @@
+{
+  "locals": {
+    "root": "/",
+    "domain": "http://luke.vivier.ca"
+  },
+  "require": ["moment", "./node_modules/gravatar/"],
+  "plugins": ["./node_modules/wintersmith-stylus/"]
+}

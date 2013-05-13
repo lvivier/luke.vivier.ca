@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "dependencies": {
+    "wintersmith": "1.2.x",
+    "wintersmith-stylus": "~0.1.2",
+    "moment": "~2.0.0",
+    "gravatar": "~1.0.6"
+  },
+  "scripts": {
+    "build": "wintersmith build",
+    "preview": "wintersmith preview"
+  }
+}

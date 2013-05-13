@@ -1,0 +1,40 @@
+!!! 5
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    link(
+      rel='stylesheet'
+      href= locals.root + 'style/main.css')
+    link(
+      rel='stylesheet'
+      href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic')
+    title= page.title
+  body
+    header
+      div.layout
+        block header
+          a(href=locals.root)
+            h1.logo luke vivier
+
+    section(role='main')
+      div.layout
+        block content
+
+    footer
+      div.layout
+        block footer
+          section#avatar
+            img(src=gravatar.url('luke@vivier.ca',{size: 140}))
+          section#bio
+            p
+              | luke is such-and-such blah blah blah blah blah blah blah blah blah blah
+              | blah blah blah blah blah blah blah blah blah blah
+          section#contact
+            ul.shareicons
+              li(data-icon='t')
+                a(href='http://twitter.com/LukeVivier') follow me on twitter
+              li(data-icon='g')
+                a(href='https://github.com/lvivier') hot forking action
+              li(data-icon='r')
+                a(href='http://www.rdio.com/people/lukevivier/') music stalk me on rdio
+        small(data-icon='cp') &nbsp;This work is licensed under a Creative Commons Attribution 3.0 Unported License.

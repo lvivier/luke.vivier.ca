@@ -1,0 +1,238 @@
+@import 'nib'
+@import 'grid'
+@import 'brand'
+@import 'vivier'
+
+global-reset()
+
+/**
+ * Layout
+ */
+columns = 12;
+column-width = 60;
+gutter-width = 20;
+
+html
+  position: relative;
+  min-height: 100%
+
+div.layout
+  row(12)
+  margin: 0 auto
+
+/**
+ * Type
+ */
+lato = 'Lato', sans-serif
+mono = 'Ubuntu Mono', monospace
+font-size = 22px
+font-small-size = 13px
+line-height = 36px
+
+body
+  font: 300 font-size/line-height lato
+strong, b
+  font-weight: bold
+em, i
+  font-style: italic
+small
+  font-size: font-small-size
+p + p
+  text-indent: 1em
+p.lede
+  // TODO
+pre
+  background: #f9f9f9
+  border-radius: 5px
+  margin: (line-height / 2) 0
+  padding: 18px 36px
+  font-size: 18px
+  line-height: 18px
+code
+  font-family: mono
+  font-size: 18px
+
+/**
+ * Body
+ */
+body
+  border-top: 3px solid red
+  background: #333
+  color: #ddd
+body > header
+  position: absolute
+  width: 100%
+body > header a
+  text-decoration: none
+body h1.logo
+  display: inline-block
+  background: red
+  color: white
+  padding: 0.5em
+  transition: padding-top .4s, margin-bottom .4s
+body h1.logo:hover
+  padding-top: 1em
+  margin-bottom: -.5em
+body > section
+  background: #fcfcfc
+  color: #333
+  padding: (line-height * 3) 0
+body > footer
+  font-size: 18px
+  line-height: (line-height * .75)
+  width: 100%
+  padding-top: (line-height * 1)
+  border-top: 3px solid #ddd
+section#contact
+  column(3)
+  offset(1)
+section#avatar
+  column(2)
+section#bio
+  column(6)
+body > footer small
+  color: #777
+  clear: both
+  display: block
+  width: 100%
+  padding: (line-height / 2) 0
+  text-indent: 1em
+body > footer small:before
+  color: #eee
+
+/**
+ * Articles List
+ */
+ul.articles li
+  row()
+  margin: line-height 0
+ul.articles time
+  column(2)
+  text-align: right
+  text-transform: uppercase
+  font-size: font-small-size
+ul.articles .title
+  column(8)
+  font-weight: normal
+ul.articles .title a
+  border-bottom-width: 0
+ul.articles .title a:hover
+  border-bottom-width: 1px
+ul.articles p
+  column(8)
+  offset(2)
+
+/**
+ * Article
+ */
+article.post
+  position: relative
+  column(8)
+  offset(2)
+
+a
+  text-decoration: none
+  color: #00f
+  border-bottom: 1px solid #00f
+a:visited
+  color: #551a8b
+  border-bottom: 1px solid #551a8b
+a:active
+  color: red
+  border-bottom: 1px solid red
+
+article.post header a
+  color: #333
+  text-decoration: none
+article.post header h1
+  color: red
+  font-size: (font-size * 2)
+  line-height: (line-height * 1.5)
+  margin-bottom: (line-height * 0.5)
+
+article.post footer
+  color: #999
+  font-size: font-small-size
+
+article.post aside.share
+  font-size: font-small-size
+  column(2)
+  position: absolute
+  left: (0 - column-width * 2 - gutter-width * 2.5)px
+  margin-top: (line-height * .25)
+  padding: (line-height * .5 - 1) 0
+  line-height: (line-height * .75)
+  border-top: 1px solid #f0f0f0
+  border-bottom: 1px solid #f0f0f0
+
+ul.shareicons li[data-icon=t]:hover:before
+  color: color-twitter
+ul.shareicons li[data-icon=f]:hover:before
+  color: color-facebook
+ul.shareicons li[data-icon=r]:hover:before
+  color: color-rdio
+ul.shareicons li[data-icon=g]:hover:before
+  color: invert(color-github)
+ul.shareicons li
+  position: relative
+ul.shareicons li:before
+  color: #999
+  display: block
+  position: absolute
+  left: -1.2em
+  line-height: (line-height * .8)
+  transition: color .5s
+ul.shareicons a
+  border-bottom: 1px solid #777
+  color: #777
+
+#contact ul.shareicons li
+  color: #aaa
+  padding: (line-height * .25) 0
+#contact ul.shareicons a
+  color: #aaa
+  text-decoration: none
+  border-bottom: 1px solid transparent
+  transition: color .5s
+#contact ul.shareicons li:hover a
+  color: #eee
+  border-bottom: 1px solid #777
+
+article.post h2,
+article.post h3
+  font-weight: bold
+  text-transform: uppercase
+
+article.post h2
+  font-size: (font-size * 1.4)
+  margin-top: (line-height * 1.5)
+  border-top: 1px solid #f0f0f0
+  padding: (line-height / 2) 0
+
+article.post h3
+  margin-top: line-height
+
+
+article.post figure
+  position: relative
+  margin: line-height 0
+article.post figure img
+  width: 100%
+article.post figure figcaption
+  column(2)
+  position: absolute
+  top: 0
+  right: (0 - column-width * 2 - gutter-width * 2.5)px
+  color: #999
+  font-size: font-small-size
+  line-height: (line-height * .5)
+  padding: (line-height * .5 - 1) 0
+  border-top: 1px solid #f0f0f0
+  border-bottom: 1px solid #f0f0f0
+
+article.post blockquote
+  text-indent: -.4em
+  font-size: (font-size * 1.15)
+  font-weight: normal
+  text-align: justify
+  margin: (line-height) (0px - column-width * 2 - gutter-width * 2)

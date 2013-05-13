@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  include articles
+  ul.articles
+    each article in articles
+      li
+        time= article.ssdate
+        div.title
+          a(href=article.url) #{article.title}
+        p.summary= article.metadata.summary
