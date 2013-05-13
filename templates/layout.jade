@@ -23,18 +23,25 @@ html(lang='en')
     footer
       div.layout
         block footer
-          section#avatar
-            img(src=gravatar.url('luke@vivier.ca',{size: 140}))
           section#bio
             p
-              | luke is such-and-such blah blah blah blah blah blah blah blah blah blah
-              | blah blah blah blah blah blah blah blah blah blah
-          section#contact
+              | <em>Hi, I'm Luke.</em> I write code for web and embedded systems in Vancouver, BC. 
+              | Lover of the web, mountaineering, contemporary architecture, local beer and wine, and the future.
+
+          section.contact
             ul.shareicons
+              li(data-icon='m')
+                a(href='mailto:luke@vivier.ca') email me
               li(data-icon='t')
                 a(href='http://twitter.com/LukeVivier') follow me on twitter
               li(data-icon='g')
                 a(href='https://github.com/lvivier') hot forking action
+          section.contact
+            ul.shareicons
+              li(data-icon='i')
+                a(href='http://instagram.com/lukevivier/') look at this instagram
               li(data-icon='r')
                 a(href='http://www.rdio.com/people/lukevivier/') music stalk me on rdio
+              li(data-icon='o')
+                a(href='https://foursquare.com/user/42829265') real stalk me on foursquare
         small(data-icon='cp') &nbsp;This work is licensed under a Creative Commons Attribution 3.0 Unported License.

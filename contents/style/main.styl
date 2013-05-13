@@ -81,15 +81,13 @@ body > footer
   font-size: 18px
   line-height: (line-height * .75)
   width: 100%
-  padding-top: (line-height * 1)
+  padding-top: (line-height * 1.5)
   border-top: 3px solid #ddd
-section#contact
+section.contact
   column(3)
-  offset(1)
-section#avatar
-  column(2)
 section#bio
-  column(6)
+  column(5)
+  pull(1)
 body > footer small
   color: #777
   clear: both
@@ -173,6 +171,11 @@ ul.shareicons li[data-icon=r]:hover:before
   color: color-rdio
 ul.shareicons li[data-icon=g]:hover:before
   color: invert(color-github)
+ul.shareicons li[data-icon=i]:hover:before
+  color: invert(color-instagram)
+ul.shareicons li[data-icon=o]:hover:before
+  color: invert(color-foursquare)
+
 ul.shareicons li
   position: relative
 ul.shareicons li:before
@@ -186,15 +189,15 @@ ul.shareicons a
   border-bottom: 1px solid #777
   color: #777
 
-#contact ul.shareicons li
+.contact ul.shareicons li
   color: #aaa
-  padding: (line-height * .25) 0
-#contact ul.shareicons a
+  padding-bottom: (line-height * .5)
+.contact ul.shareicons a
   color: #aaa
   text-decoration: none
   border-bottom: 1px solid transparent
   transition: color .5s
-#contact ul.shareicons li:hover a
+.contact ul.shareicons li:hover a
   color: #eee
   border-bottom: 1px solid #777
 
