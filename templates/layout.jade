@@ -7,6 +7,9 @@ html(lang='en')
       href= locals.root + 'style/main.css')
     link(
       rel='stylesheet'
+      href= locals.root + 'style/prism.css')
+    link(
+      rel='stylesheet'
       href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic')
     title= page.title
   body
@@ -45,3 +48,4 @@ html(lang='en')
               li(data-icon='o')
                 a(href='https://foursquare.com/user/42829265') real stalk me on foursquare
         small(data-icon='cp') &nbsp;This work is licensed under a Creative Commons Attribution 3.0 Unported License.
+  script(src=locals.root + 'js/prism.js')

@@ -8,7 +8,7 @@ summary:
 
 This is a test article!
 
-```js
+```javascript
 var express = require('express')
   , app = express()
 
