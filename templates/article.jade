@@ -16,6 +16,6 @@ block content
           a(href=twitter) tweet this
         li(data-icon='f')
           a(href=facebook) share this
-    !=page.html
+    != type(page.html)
     footer
       time(datetime=page.date.toISOString())= moment(page.date).format('dddd MMMM Do, YYYY')

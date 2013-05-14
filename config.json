@@ -3,6 +3,6 @@
     "root": "/",
     "domain": "http://luke.vivier.ca"
   },
-  "require": ["moment", "./node_modules/gravatar/"],
+  "require": ["moment", "./node_modules/gravatar/", "./lib/type/"],
   "plugins": ["./node_modules/wintersmith-stylus/"]
 }
