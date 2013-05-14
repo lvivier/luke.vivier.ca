@@ -2,15 +2,7 @@
 html(lang='en')
   head
     meta(charset='utf-8')
-    link(
-      rel='stylesheet'
-      href= locals.root + 'style/main.css')
-    link(
-      rel='stylesheet'
-      href= locals.root + 'style/prism.css')
-    link(
-      rel='stylesheet'
-      href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic')
+    include partials/styles
     title= page.title
   body
     header
@@ -23,29 +15,5 @@ html(lang='en')
       div.layout
         block content
 
-    footer
-      div.layout
-        block footer
-          section#bio
-            p
-              | <em>Hi, I'm Luke.</em> I write code for the web and embedded systems in Vancouver, BC.
-              | Ranting about humanism, education, contemporary architecture, but mostly the web.
-
-          section.contact
-            ul.shareicons
-              li(data-icon='m')
-                a(href='mailto:luke@vivier.ca') email me
-              li(data-icon='t')
-                a(href='http://twitter.com/LukeVivier') follow me on twitter
-              li(data-icon='g')
-                a(href='https://github.com/lvivier') hot forking action
-          section.contact
-            ul.shareicons
-              li(data-icon='i')
-                a(href='http://instagram.com/lukevivier/') look at this instagram
-              li(data-icon='r')
-                a(href='http://www.rdio.com/people/lukevivier/') music stalk me on rdio
-              li(data-icon='o')
-                a(href='https://foursquare.com/user/42829265') real stalk me on foursquare
-        small(data-icon='cp') &nbsp;This work is licensed under a Creative Commons Attribution 3.0 Unported License.
+    include partials/footer
   script(src=locals.root + 'js/prism.js')

@@ -42,7 +42,7 @@ p + p
 p.lede
   // TODO
 pre
-  background: #f9f9f9
+  background: #f9f9f6
   border-radius: 5px
   margin: (line-height / 2) 0
   padding: 18px 36px
@@ -56,12 +56,13 @@ code
  * Body
  */
 body
-  border-top: 3px solid red
-  background: #333
-  color: #ddd
+  background: #fbfbfb
+  color: #333
+  margin-bottom: 256px
 body > header
   position: absolute
-  width: 100%
+  border-top: 3px solid red
+  min-width: 100%
 body > header a
   text-decoration: none
 body h1.logo
@@ -74,15 +75,18 @@ body h1.logo:hover
   padding-top: 1em
   margin-bottom: -.5em
 body > section
-  background: #fcfcfc
-  color: #333
   padding: (line-height * 3) 0
+  min-width: 100%
 body > footer
+  background: #333
+  color: #ddd
   font-size: 18px
   line-height: (line-height * .75)
-  width: 100%
+  min-width: 100%
   padding-top: (line-height * 1.5)
   border-top: 3px solid #ddd
+  position: absolute
+  bottom: 0
 section.contact
   column(3)
 section#bio
@@ -173,9 +177,11 @@ ul.shareicons li[data-icon=r]:hover:before
 ul.shareicons li[data-icon=g]:hover:before
   color: invert(color-github)
 ul.shareicons li[data-icon=i]:hover:before
-  color: invert(color-instagram)
+  color: color-instagram
 ul.shareicons li[data-icon=o]:hover:before
-  color: invert(color-foursquare)
+  color: #a4ea45
+ul.shareicons li[data-icon=m]:hover:before
+  color: #fec
 
 ul.shareicons li
   position: relative
