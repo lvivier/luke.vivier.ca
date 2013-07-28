@@ -7,7 +7,7 @@
     "typogr": "~0.5.2"
   },
   "scripts": {
-    "build": "wintersmith build",
-    "preview": "wintersmith preview"
+    "build": "./node_modules/wintersmith/bin/wintersmith build",
+    "preview": "./node_modules/wintersmith/bin/wintersmith preview"
   }
 }

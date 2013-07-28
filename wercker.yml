@@ -1,0 +1,32 @@
+box: wercker/nodejs
+build:
+  steps:
+    # install dependencies
+    - npm-install
+
+    # wintersmith build -v
+    - script:
+        name: wintersmith build
+        code: ./node_modules/wintersmith/bin/wintersmith build -o ./build
+
+    # generate CNAME file for github pages
+    - create-file:
+        name: generate cname file
+        filename: ./build/CNAME
+        content: luke.vivier.ca
+deploy:
+  steps:
+    - script:
+        name: config git
+        code: |-
+          git config --global user.email "luke@vivier.ca"
+          git config --global user.name "lvivier"
+          rm -rf .git
+    - script:
+        name: deploy to github pages
+        code: |-
+          cd build
+          git init
+          git add .
+          git commit -m "deploy from $WERCKER_STARTED_BY"
+          git push -f $GIT_REMOTE master:gh-pages
