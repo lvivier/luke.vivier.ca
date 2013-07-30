@@ -10,6 +10,8 @@ block content
     header
       a(rel='self',href=page.url)
         h1= page.title
+    footer
+      time(datetime=page.date.toISOString())= moment(page.date).format('dddd MMMM Do, YYYY')
     aside.share
       ul.shareicons
         li(data-icon='t')
@@ -17,5 +19,3 @@ block content
         li(data-icon='f')
           a(href=facebook) share this
     != type(page.html)
-    footer
-      time(datetime=page.date.toISOString())= moment(page.date).format('dddd MMMM Do, YYYY')

@@ -45,12 +45,18 @@ pre
   background: #f9f9f6
   border-radius: 5px
   margin: (line-height / 2) 0
-  padding: 18px 36px
-  font-size: 18px
-  line-height: 18px
+  padding: (line-height * 0.66)
+  font-size: 14px
+  line-height: (line-height * 0.66)
 code
   font-family: mono
   font-size: 18px
+pre code
+  font-size: 14px
+article ul
+  margin: (line-height / 2) 0
+  list-style-type: disc
+  list-style-position: outside
 
 /**
  * Body
@@ -183,6 +189,9 @@ ul.shareicons li[data-icon=o]:hover:before
 ul.shareicons li[data-icon=m]:hover:before
   color: #fec
 
+ul.shareicons
+  margin: 0 0
+  list-style-type: none
 ul.shareicons li
   position: relative
 ul.shareicons li:before
@@ -211,13 +220,13 @@ ul.shareicons a
 article.post h2,
 article.post h3
   font-weight: bold
-  text-transform: uppercase
 
 article.post h2
   font-size: (font-size * 1.4)
   margin-top: (line-height * 1.5)
+  margin-bottom: (line-height * 0.5)
   border-top: 1px solid #f0f0f0
-  padding: (line-height / 2) 0
+  padding: (line-height / 4) 0
 
 article.post h3
   margin-top: line-height
