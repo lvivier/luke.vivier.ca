@@ -53,7 +53,7 @@ Now we'll add a deploy step to `wercker.yml`:
 ```yaml
 deploy:
   steps:
-    - gh-pages:
+    - lukevivier/gh-pages:
         repo: <owner>/<repo>
         token: $GH_TOKEN
         basedir: build
