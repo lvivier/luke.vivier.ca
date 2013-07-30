@@ -1,13 +1,11 @@
 {
   "private": true,
   "dependencies": {
-    "wintersmith": "1.2.x",
-    "wintersmith-stylus": "~0.1.2",
+    "wintersmith": "2.0.x",
+    "wintersmith-stylus": "~0.3.0",
     "gravatar": "~1.0.6",
-    "typogr": "~0.5.2"
-  },
-  "scripts": {
-    "build": "./node_modules/wintersmith/bin/wintersmith build",
-    "preview": "./node_modules/wintersmith/bin/wintersmith preview"
+    "typogr": "~0.5.2",
+    "moment": "~2.1.0",
+    "underscore": "~1.4.4"
   }
 }
