@@ -7,7 +7,7 @@ build:
         code: ./node_modules/.bin/wintersmith build -v -o ./build
 deploy:
   steps:
-    - lukevivier/gh-pages:
+    - gh-pages:
         repo: lvivier/luke.vivier.ca
         token: $GIT_TOKEN
         domain: luke.vivier.ca
