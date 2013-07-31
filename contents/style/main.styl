@@ -13,7 +13,7 @@ column-width = 60;
 gutter-width = 20;
 
 html
-  position: relative;
+  position: relative
   min-height: 100%
 
 div.layout
@@ -53,10 +53,6 @@ code
   font-size: 18px
 pre code
   font-size: 14px
-article ul
-  margin: (line-height / 2) 0
-  list-style-type: disc
-  list-style-position: outside
 
 /**
  * Body
@@ -105,9 +101,10 @@ body > footer small
   display: block
   width: 100%
   padding: (line-height / 2) 0
-  text-indent: 1em
+  margin-left: 10px
 body > footer small:before
-  color: #eee
+  color: #aaa
+  letter-spacing: 1px
 
 /**
  * Articles List
@@ -140,15 +137,11 @@ article.post
   offset(2)
 
 a
-  text-decoration: none
   color: #00f
-  border-bottom: 1px solid #00f
 a:visited
   color: #551a8b
-  border-bottom: 1px solid #551a8b
 a:active
   color: red
-  border-bottom: 1px solid red
 
 article.post header a
   color: #333
@@ -174,6 +167,7 @@ article.post aside.share
   border-top: 1px solid #f0f0f0
   border-bottom: 1px solid #f0f0f0
 
+// Icons
 ul.shareicons li[data-icon=t]:hover:before
   color: color-twitter
 ul.shareicons li[data-icon=f]:hover:before
@@ -190,7 +184,7 @@ ul.shareicons li[data-icon=m]:hover:before
   color: #fec
 
 ul.shareicons
-  margin: 0 0
+  margin: 0 1.2em 0
   list-style-type: none
 ul.shareicons li
   position: relative
@@ -202,8 +196,10 @@ ul.shareicons li:before
   line-height: (line-height * .8)
   transition: color .5s
 ul.shareicons a
-  border-bottom: 1px solid #777
+  text-decoration: none
   color: #777
+ul.shareicons a:hover
+  text-decoration: underline
 
 .contact ul.shareicons li
   color: #aaa
@@ -224,14 +220,23 @@ article.post h3
 article.post h2
   font-size: (font-size * 1.4)
   margin-top: (line-height * 1.5)
-  margin-bottom: (line-height * 0.5)
-  border-top: 1px solid #f0f0f0
-  padding: (line-height / 4) 0
+  margin-bottom: (line-height / 2)
 
 article.post h3
   margin-top: line-height
 
+// Unordered lists
+article ul
+  margin: (line-height / 2) 0 (line-height / 2) 1em
+  list-style-type: none
 
+article ul li:before
+  position: absolute
+  left: 0
+  content: "•"
+  color: #aaa
+
+// Figures
 article.post figure
   position: relative
   margin: line-height 0
@@ -249,6 +254,7 @@ article.post figure figcaption
   border-top: 1px solid #f0f0f0
   border-bottom: 1px solid #f0f0f0
 
+// Blockquotes
 article.post blockquote
   text-indent: -.4em
   font-size: (font-size * 1.15)

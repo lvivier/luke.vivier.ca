@@ -39,13 +39,19 @@ build:
 Before we set up a deploy target, we need a Personal API Access Token. Go to the [Applications page](https://github.com/settings/applications) in your account settings on GitHub. Click on *Create new token*, and copy the token that appears.
 
 <figure>
-![Personal API Access Token dialog on GitHub](github-tokens.png)
+  ![Personal API Access Token dialog on GitHub](github-tokens.png)
+  <figcaption>
+    Access token dialog on GitHub.
+  </figcaption>
 </figure>
 
 Now create a deploy target on wercker. Go to the Settings tab for your application, click *Add deploy target*, and choose *custom deploy*. Give it a name, and enable *auto deploy successful builds to branches* (add "master"). Add an environment variable and paste the access token from GitHub as the value.
 
 <figure>
-![Add deploy target dialog on wercker](wercker-deploy-target.png)
+  ![Add deploy target dialog on wercker](wercker-deploy-target.png)
+  <figcaption>
+    Add deploy target dialog on wercker.
+  </figcaption>
 </figure>
 
 Now we'll add a deploy step to `wercker.yml`:
@@ -70,7 +76,10 @@ Add a `domain` option to the deploy step if you want a [custom domain](https://h
 Commit `wercker.yml` and push it up to GitHub. On wercker, the Builds tab for your application should show the build in process. If you enabled auto deploy on the deploy target, it will start as soon as the build passes. Otherwise, click on the build and select your target from *Deploy this build* dropdown. After a few moments, your wintersmith site is deployed to the `gh-pages` branch on GitHub.
 
 <figure>
-![Manually deploying a build on wercker](wercker-deploy.png)
+  ![Manually deploying a build on wercker](wercker-deploy.png)
+  <figcaption>
+    Manually deploying a build on wercker.
+  </figcaption>
 </figure>
 
 Voila! Now you can use wintersmith for all your project sites and have them deployed automatically when you push to GitHub.
