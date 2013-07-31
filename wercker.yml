@@ -8,7 +8,6 @@ build:
 deploy:
   steps:
     - lukevivier/gh-pages:
-        repo: lvivier/luke.vivier.ca
         token: $GIT_TOKEN
         domain: luke.vivier.ca
         basedir: build
