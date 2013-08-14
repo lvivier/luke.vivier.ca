@@ -7,12 +7,14 @@
     }
   },
   "require": {
-    "type": "./lib/type/",
     "gravatar": "gravatar",
     "moment": "moment",
     "_": "underscore"
   },
   "plugins": [
     "wintersmith-stylus"
-  ]
+  ],
+  "markdown": {
+    "smartypants": true
+  }
 }
