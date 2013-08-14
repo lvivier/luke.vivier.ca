@@ -1,11 +1,13 @@
 !!! 5
-html(lang='en')
+html(lang= locals.lang || 'en')
   head
     meta(charset='utf-8')
-    meta(name="google-site-verification",
-         content="wSa31lNSwA4L50Wm7LD6yqZzn29TUgAwQMjtxQNyel8")
-    include partials/styles
+    block meta
+      if locals.meta
+        each content, name in locals.meta
+          meta(name= name, content= content)
     title= page.title
+    include partials/styles
   body
     header
       div.layout

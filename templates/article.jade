@@ -1,6 +1,11 @@
 //- blog article template
 extends layout
 
+block meta
+  if page.metadata.meta
+    each content, name in page.metadata.meta
+      meta(name= name, content= content)
+
 block content
   //- social share urls
   - var twitter = 'http://twitter.com/intent/tweet?url=' + locals.domain + page.url + '&text=' + encodeURIComponent(page.title)
