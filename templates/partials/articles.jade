@@ -1,9 +1,0 @@
-//- articles list
-- var articles = _.chain(contents._.directories).pluck('index').compact().sortBy('date').reverse().value()
-
-//- nice dates
-- _.each(articles, function (article) {
--   article.isodate = moment(article.date).format()
--   article.sdate   = moment(article.date).format('YYYY-MM-DD')
--   article.ssdate  = moment(article.date).format('MMM D')
-- })

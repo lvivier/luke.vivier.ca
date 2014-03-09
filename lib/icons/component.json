@@ -1,0 +1,10 @@
+{
+  "name": "icons",
+  "styles": ["icons.styl"],
+  "files": [
+    "icons.eot",
+    "icons.svg",
+    "icons.ttf",
+    "icons.woff"
+  ]
+}

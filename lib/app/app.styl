@@ -1,16 +1,24 @@
+
+/**
+ * Dependencies
+ */
+
 @import 'nib'
-@import 'grid'
+@import '../views/grid'
+@import '../views/vars'
 
-@import 'brand'
-@import 'vivier'
 
-@import 'tomorrow'
+/**
+ * Reset
+ */
 
 global-reset()
 
+
 /**
- * Layout
+ * App layout
  */
+
 columns = 12;
 column-width = 60;
 gutter-width = 20;
@@ -19,21 +27,21 @@ html
   position: relative
   min-height: 100%
 
+// TODO needed?
 div.layout
   row(12)
   margin: 0 auto
 
+
 /**
  * Type
  */
-lato = 'Lato', sans-serif
-mono = 'Ubuntu Mono', monospace
-font-size = 22px
-font-small-size = 13px
-line-height = 36px
 
 body
-  font: 300 font-size/line-height lato
+  font-family: 'Lato', sans-serif
+  font-weight: 300
+  line-height: line-height
+  font-size: font-size
 strong, b
   font-weight: bold
 em, i
@@ -57,9 +65,11 @@ code
 pre code
   font-size: 14px
 
+
 /**
  * Body
  */
+
 body
   background: #fbfbfb
   color: #333
@@ -79,7 +89,7 @@ body h1.logo
 body h1.logo:hover
   padding-top: 1em
   margin-bottom: -.5em
-body > section
+body > main
   padding: (line-height * 3) 0
   min-width: 100%
 body > footer
@@ -109,9 +119,11 @@ body > footer small:before
   color: #aaa
   letter-spacing: 1px
 
+
 /**
  * Articles List
  */
+
 ul.articles li
   row()
   margin: line-height 0
@@ -131,9 +143,11 @@ ul.articles p
   column(8)
   offset(2)
 
+
 /**
  * Article
  */
+
 article.post
   position: relative
   column(8)

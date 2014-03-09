@@ -1,3 +1,4 @@
+
 extends layout
 
 block append meta
@@ -5,11 +6,12 @@ block append meta
        content='wSa31lNSwA4L50Wm7LD6yqZzn29TUgAwQMjtxQNyel8')
 
 block content
-  include partials/articles
   ul.articles
     each article in articles
-      li
-        time= article.ssdate
-        div.title
-          a(href=article.url) #{article.title}
-        p.summary= article.metadata.summary
+      li: +summary(article)
+
+mixin summary (obj)
+  time= time('%Y %b %d', obj.date)
+  div.title
+    a(href=obj.path)= obj.title
+  p.summary= obj.excerpt
