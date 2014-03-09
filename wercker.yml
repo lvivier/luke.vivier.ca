@@ -3,8 +3,8 @@ build:
   steps:
     - npm-install
     - script:
-        name: wintersmith build
-        code: ./node_modules/.bin/wintersmith build -v -o ./build
+        name: build
+        code: npm run build
 deploy:
   steps:
     - lukevivier/gh-pages:
