@@ -4,9 +4,12 @@
 
 My internet website.
 
-Made with [wintersmith][1], [jade][2], [stylus][3] & [nib][4].
+Made with [metalsmith][1], [component][2], [jade][3], [stylus][4] & [nib][5].
+Hosted on [GitHub Pages][gh].
 
-[1]:http://jnordberg.github.io/wintersmith/
-[2]:http://jade-lang.com/
-[3]:http://learnboost.github.io/stylus/
-[4]:http://visionmedia.github.io/nib/
+[1]:http://metalsmith.io/
+[2]:https://github.com/component/component
+[3]:http://jade-lang.com/
+[4]:http://learnboost.github.io/stylus/
+[5]:http://visionmedia.github.io/nib/
+[gh]:http://pages.github.com/
