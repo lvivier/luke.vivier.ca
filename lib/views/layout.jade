@@ -8,10 +8,10 @@ html(lang='en')
     title= title
   body
     header
-      div.layout
-        a(href='/')
-          h1.logo luke vivier
+      div.row
+        a(href='/'): h1.logo luke vivier
     main
-      div.layout
+      div.row
         block content
     include footer
+    script(src='/build.js')

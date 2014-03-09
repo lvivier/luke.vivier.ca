@@ -27,8 +27,7 @@ html
   position: relative
   min-height: 100%
 
-// TODO needed?
-div.layout
+div.row
   row(12)
   margin: 0 auto
 
@@ -184,52 +183,6 @@ article.post aside.share
   border-top: 1px solid #f0f0f0
   border-bottom: 1px solid #f0f0f0
 
-// Icons
-ul.shareicons li[data-icon=t]:hover:before
-  color: color-twitter
-ul.shareicons li[data-icon=f]:hover:before
-  color: color-facebook
-ul.shareicons li[data-icon=r]:hover:before
-  color: color-rdio
-ul.shareicons li[data-icon=g]:hover:before
-  color: invert(color-github)
-ul.shareicons li[data-icon=i]:hover:before
-  color: color-instagram
-ul.shareicons li[data-icon=o]:hover:before
-  color: #a4ea45
-ul.shareicons li[data-icon=m]:hover:before
-  color: #fec
-
-ul.shareicons
-  margin: 0 1.2em 0
-  list-style-type: none
-ul.shareicons li
-  position: relative
-ul.shareicons li:before
-  color: #999
-  display: block
-  position: absolute
-  left: -1.2em
-  line-height: (line-height * .8)
-  transition: color .5s
-ul.shareicons a
-  text-decoration: none
-  color: #777
-ul.shareicons a:hover
-  text-decoration: underline
-
-.contact ul.shareicons li
-  color: #aaa
-  padding-bottom: (line-height * .5)
-.contact ul.shareicons a
-  color: #aaa
-  text-decoration: none
-  border-bottom: 1px solid transparent
-  transition: color .5s
-.contact ul.shareicons li:hover a
-  color: #eee
-  border-bottom: 1px solid #777
-
 article.post h2,
 article.post h3
   font-weight: bold
@@ -242,7 +195,11 @@ article.post h2
 article.post h3
   margin-top: line-height
 
-// Unordered lists
+
+/**
+ * Lists
+ */
+
 article ul
   margin: (line-height / 2) 0 (line-height / 2) 1em
   list-style-type: none
@@ -253,7 +210,11 @@ article ul li:before
   content: "•"
   color: #aaa
 
-// Figures
+
+/**
+ * Figures
+ */
+
 article.post figure
   position: relative
   margin: line-height 0
@@ -271,7 +232,11 @@ article.post figure figcaption
   border-top: 1px solid #f0f0f0
   border-bottom: 1px solid #f0f0f0
 
-// Blockquotes
+
+/**
+ * Blockquote
+ */
+
 article.post blockquote
   text-indent: -.4em
   font-size: (font-size * 1.15)

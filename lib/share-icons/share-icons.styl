@@ -1,0 +1,55 @@
+
+/**
+ * Dependencies
+ */
+
+@import '../views/grid'
+@import '../views/vars'
+
+
+/**
+ * Share icons
+ */
+
+ul.shareicons
+  margin-top: -(line-height * .25)
+  margin-right: 1.2em
+  margin-bottom: (line-height)
+  list-style-type: none
+
+  li
+    position: relative
+
+  a:before
+    color: #999
+    display: block
+    position: absolute
+    left: -1.2em
+    line-height: (line-height * .8)
+    transition: color .3s
+
+  a
+    display: block
+    padding: (line-height * .25) 0
+    text-decoration: none
+    transition: color .3s
+    color: #aaa
+  a:hover
+    color: #eee
+
+    span
+      border-bottom: 1px dotted #666
+
+  .icon-twitter:hover:before
+    color: color-twitter
+  .icon-facebook:hover:before
+    color: color-facebook
+  .icon-rdio:hover:before
+    color: color-rdio
+  .icon-github:hover:before
+    color: invert(color-github)
+  .icon-instagram:hover:before
+  .icon-email:hover:before
+    color: #fec
+  .icon-foursquare:hover:before
+    color: #a4ea45
