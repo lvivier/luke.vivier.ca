@@ -1,0 +1,60 @@
+#!/usr/bin/env node
+
+/**
+ * Dependencies
+ */
+
+var collections = require('metalsmith-collections')
+var permalinks = require('metalsmith-permalinks')
+var templates = require('metalsmith-templates')
+var excerpts = require('metalsmith-excerpts')
+var markdown = require('metalsmith-markdown')
+var build = require('../lib/build')
+var metal = require('metalsmith')
+var join = require('path').join
+
+
+/**
+ * Config
+ */
+
+var cwd = process.cwd()
+var out = join(cwd, 'build')
+var dev = (process.env.NODE_ENV === 'development')
+
+
+/**
+ * View helpers and metadata
+ */
+
+var helpers = {time: require('strftime')}
+
+
+/**
+ * Component builder
+ */
+
+build(cwd, out, dev, done)
+
+
+/**
+ * Metalsmith
+ */
+
+metal(cwd)
+  .metadata(helpers)
+  .use(excerpts())
+  .use(markdown())
+  .use(permalinks({pattern: '/:slug'}))
+  .use(collections({articles: {sortBy:'date', reverse:true}}))
+  .use(templates({engine:'jade', directory:'lib/views'}))
+  .build(done)
+
+
+/**
+ * Error-handler
+ */
+
+function done (err) {
+  if (err) throw err
+}
