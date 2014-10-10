@@ -73,24 +73,30 @@ body
   background: #fbfbfb
   color: #333
   margin-bottom: 256px
-body > header
-  position: absolute
-  border-top: 3px solid red
-  min-width: 100%
-body > header a
-  text-decoration: none
-body h1.logo
-  display: inline-block
-  background: red
-  color: white
-  padding: 0.5em
-  transition: padding-top .4s, margin-bottom .4s
-body h1.logo:hover
-  padding-top: 1em
-  margin-bottom: -.5em
 body > main
   padding: (line-height * 3) 0
   min-width: 100%
+
+
+/**
+ * Page Header
+ */
+
+body > header
+  position: absolute
+  border-top: 3px solid lvivier
+  min-width: 100%
+  a
+    text-decoration: none
+  h1.logo
+    display: inline-block
+    background: lvivier
+    color: white
+    padding: 0.5em
+    transition: padding-top .4s, margin-bottom .4s
+  h1.logo:hover
+    padding-top: 1em
+    margin-bottom: -.5em
 
 
 /**
@@ -139,24 +145,29 @@ body > footer
  * Articles List
  */
 
-ul.articles li
-  row()
-  margin: line-height 0
-ul.articles time
-  column(2)
-  text-align: right
-  text-transform: uppercase
-  font-size: font-small-size
-ul.articles .title
-  column(8)
-  font-weight: normal
-ul.articles .title a
-  border-bottom-width: 0
-ul.articles .title a:hover
-  border-bottom-width: 1px
-ul.articles p
-  column(8)
-  offset(2)
+ul.articles
+  li
+    row()
+    margin: line-height 0
+  time
+    column(2)
+    position: relative
+    top: 5px
+    text-align: right
+    text-transform: uppercase
+    font-size: font-small-size
+  .title
+    column(8)
+    font-size: 30px
+    font-weight: normal
+  .title a
+    color: lvivier
+    text-decoration: none
+  .title a:hover
+    border-bottom: 1px dotted #999
+  .summary
+    column(8)
+    offset(2)
 
 
 /**
@@ -168,18 +179,23 @@ article.post
   column(8)
   offset(2)
 
+  p:last-of-type:after
+    content:'◼'
+    vertical-align: middle
+    color: lvivier
+
 a
   color: #00f
 a:visited
   color: #551a8b
 a:active
-  color: red
+  color: lvivier
 
 article.post header a
   color: #333
   text-decoration: none
 article.post header h1
-  color: red
+  color: lvivier
   font-size: (font-size * 2)
   line-height: (line-height * 1.5)
   margin-bottom: (line-height * 0.5)
@@ -201,7 +217,7 @@ article.post aside.share
 
 article.post h2,
 article.post h3
-  font-weight: bold
+  color: #7f8c8d
 
 article.post h2
   font-size: (font-size * 1.4)
