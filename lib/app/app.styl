@@ -91,6 +91,12 @@ body h1.logo:hover
 body > main
   padding: (line-height * 3) 0
   min-width: 100%
+
+
+/**
+ * Page Footer
+ */
+
 body > footer
   background: #333
   color: #ddd
@@ -101,22 +107,32 @@ body > footer
   border-top: 3px solid #ddd
   position: absolute
   bottom: 0
-section.contact
-  column(3)
-section#bio
-  line-height: 30px
-  column(5)
-  pull(1)
-body > footer small
-  color: #777
-  clear: both
-  display: block
-  width: 100%
-  padding: (line-height / 2) 0
-  margin-left: 10px
-body > footer small:before
-  color: #aaa
-  letter-spacing: 1px
+
+  a
+  a:visited
+    color: #999
+    transition: color .3s
+    text-decoration: none
+    border-bottom: 1px dotted #666
+  a:hover
+    color: #eee
+
+  section.contact
+    column(3)
+  section#bio
+    line-height: 30px
+    column(5)
+    pull(1)
+  small
+    color: #777
+    clear: both
+    display: block
+    width: 100%
+    padding: (line-height / 2) 0
+    margin-left: 10px
+  small:before
+    color: #aaa
+    letter-spacing: 1px
 
 
 /**
