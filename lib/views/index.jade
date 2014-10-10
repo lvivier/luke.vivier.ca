@@ -14,4 +14,4 @@ mixin summary (obj)
   time= time('%Y %b %d', obj.date)
   div.title
     a(href=obj.path)= obj.title
-  p.summary= obj.excerpt
+  .summary!= obj.excerpt
