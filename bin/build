@@ -9,6 +9,7 @@ var permalinks = require('metalsmith-permalinks')
 var templates = require('metalsmith-templates')
 var excerpts = require('metalsmith-excerpts')
 var markdown = require('metalsmith-markdown')
+var drafts = require('metalsmith-drafts')
 var build = require('../lib/build')
 var metal = require('metalsmith')
 var join = require('path').join
@@ -43,11 +44,12 @@ build(cwd, out, dev, done)
 
 metal(cwd)
   .metadata(helpers)
+  .use(drafts())
   .use(markdown())
   .use(excerpts())
   .use(permalinks({pattern: '/:slug'}))
   .use(collections({articles: {sortBy:'date', reverse:true}}))
-  .use(templates({engine:'jade', directory:'lib/views'}))
+  .use(templates({engine:'jade', pretty:true, directory:'lib/views'}))
   .build(done)
 
 
