@@ -3,17 +3,17 @@
  * Dependencies
  */
 
-@import '../../node_modules/nib'
-@import '../views/grid'
-@import '../views/vars'
-
+@import 'nib'
+@import './grid'
+@import './vars'
+@import './icons'
+@import './share-icons'
 
 /**
  * Reset
  */
 
 global-reset()
-
 
 /**
  * App layout
@@ -30,7 +30,6 @@ html
 div.row
   row(12)
   margin: 0 auto
-
 
 /**
  * Type
@@ -64,7 +63,6 @@ code
 pre code
   font-size: 14px
 
-
 /**
  * Body
  */
@@ -76,7 +74,6 @@ body
 body > main
   padding: (line-height * 3) 0
   min-width: 100%
-
 
 /**
  * Page Header
@@ -97,7 +94,6 @@ body > header
   h1.logo:hover
     padding-top: 1em
     margin-bottom: -.5em
-
 
 /**
  * Page Footer
@@ -140,7 +136,6 @@ body > footer
     color: #aaa
     letter-spacing: 1px
 
-
 /**
  * Articles List
  */
@@ -168,7 +163,6 @@ ul.articles
   .summary
     column(8)
     offset(2)
-
 
 /**
  * Article
@@ -227,7 +221,6 @@ article.post h2
 article.post h3
   margin-top: line-height
 
-
 /**
  * Lists
  */
@@ -241,7 +234,6 @@ article ul li:before
   left: 0
   content: "•"
   color: #aaa
-
 
 /**
  * Figures
@@ -263,7 +255,6 @@ article.post figure figcaption
   padding: (line-height * .5 - 1) 0
   border-top: 1px solid #f0f0f0
   border-bottom: 1px solid #f0f0f0
-
 
 /**
  * Blockquote

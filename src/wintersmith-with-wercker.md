@@ -1,15 +1,15 @@
 ---
 title: Deploy anything to GitHub Pages with wercker
 collection: articles
-template: article.jade
-date: 2013-07-30
+layout: article.pug
+date: 2013-07-30T08:00:00
 ---
 
 GitHub Pages is ideal for hosting project sites and personal blogs. In terms of publishing tools, support is limited to Jekyll, or plain static HTML. If Jekyll doesn’t cut it for you, then you gotta do it custom. Enter wercker.
 
 [Wercker](http://wercker.com/) is a hosted continuous integration and deployment platform that allows you to set up custom test and deploy pipelines for all your projects. It integrates with GitHub, and supports ruby, python, and node apps with minimal configuration.
 
-For my site at [luke.vivier.ca](http://luke.vivier.ca/), I've decided to use [wintersmith](http://wintersmith.io/) as my publishing tool. Wintersmith is a super-powered static site generator with an amazingly adaptable plugin system, great docs, and a budding community. It's a node app, and uses jade and markdown out of the box. 
+For my site at [luke.vivier.ca](http://luke.vivier.ca/), I've decided to use [wintersmith](http://wintersmith.io/) as my publishing tool. Wintersmith is a super-powered static site generator with an amazingly adaptable plugin system, great docs, and a budding community. It's a node app, and uses jade and markdown out of the box.
 
 Using my wintersmith site as a template, we'll walk through the steps to set up wercker to deploy a freshly-built version of your static site every time you push to GitHub.
 
@@ -42,7 +42,7 @@ When wercker builds your site, it will clone your GitHub repo to a virtual machi
 Before we set up a deploy target, we need a Personal API Access Token. Go to the [Applications page](https://github.com/settings/applications) in your account settings on GitHub. Click on *Create new token*, and copy the token that appears.
 
 <figure>
-  ![Personal API Access Token dialog on GitHub](images/github-tokens.png)
+  ![Personal API Access Token dialog on GitHub](/images/github-tokens.png)
   <figcaption>
     Access token dialog on GitHub.
   </figcaption>
@@ -51,7 +51,7 @@ Before we set up a deploy target, we need a Personal API Access Token. Go to the
 Now create a deploy target on wercker. Go to the Settings tab for your application, click *Add deploy target*, and choose *custom deploy*. Give it a name, and enable *auto deploy successful builds to branches* (add "master"). Add an environment variable and paste the access token from GitHub as the value.
 
 <figure>
-  ![Add deploy target dialog on wercker](images/wercker-deploy-target.png)
+  ![Add deploy target dialog on wercker](/images/wercker-deploy-target.png)
   <figcaption>
     Add deploy target dialog on wercker.
   </figcaption>
@@ -79,7 +79,7 @@ Add a `domain` option to the deploy step if you want a [custom domain](https://h
 Commit `wercker.yml` and push it up to GitHub. On wercker, the Builds tab for your application should show the build in process. If you enabled auto deploy on the deploy target, it will start as soon as the build passes. Otherwise, click on the build and select your target from *Deploy this build* dropdown. After a few moments, your wintersmith site is deployed to the `gh-pages` branch on GitHub.
 
 <figure>
-  ![Manually deploying a build on wercker](images/wercker-deploy.png)
+  ![Manually deploying a build on wercker](/images/wercker-deploy.png)
   <figcaption>
     Manually deploying a build on wercker.
   </figcaption>

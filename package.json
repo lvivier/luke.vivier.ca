@@ -1,23 +1,25 @@
 {
   "private": true,
   "scripts": {
-    "build": "bin/build"
+    "build": "bin/build",
+    "serve": "serve build",
+    "clean": "rm -rf node_modules build"
   },
   "dependencies": {
-    "builder-stylus": "git://github.com/retsly/builder-stylus",
-    "component-builder": "^1.1.13",
-    "component-resolver": "^1.2.4",
-    "component-stylus-plugin": "^0.3.1",
-    "jade": "^1.7.0",
-    "metalsmith": "^1.0.1",
-    "metalsmith-collections": "^0.6.0",
-    "metalsmith-drafts": "^0.0.1",
-    "metalsmith-excerpts": "^1.0.0",
+    "metalsmith": "^2.2.0",
+    "metalsmith-collections": "^0.7.0",
+    "metalsmith-drafts": "0.0.1",
+    "metalsmith-excerpts": "^1.1.0",
+    "metalsmith-layouts": "^1.6.5",
     "metalsmith-markdown": "^0.2.1",
-    "metalsmith-permalinks": "^0.4.0",
-    "metalsmith-templates": "^0.6.0",
-    "mkdirp": "^0.5.0",
-    "nib": "^1.0.2",
-    "strftime": "^0.8.0"
+    "metalsmith-permalinks": "^0.5.0",
+    "metalsmith-stylus": "^2.0.0",
+    "mkdirp": "^0.5.1",
+    "nib": "^1.1.2",
+    "pug": "^2.0.0-beta5",
+    "strftime": "^0.9.2"
+  },
+  "devDependencies": {
+    "serve": "^1.4.0"
   }
 }

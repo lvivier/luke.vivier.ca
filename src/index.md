@@ -1,4 +1,4 @@
 ---
 title: Luke Vivier
-template: index.jade
+layout: index.pug
 ---

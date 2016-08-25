@@ -6,5 +6,5 @@ block content
     header
       a(rel='self' href='/'+path): h1= title
     footer
-      time(datetime=date.toISOString())= time('%A, %B %d %Y', date)
+      time(datetime=time('%Y-%m-%d', date))= time('%A, %B %d %Y', date)
     != contents

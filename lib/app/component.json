@@ -1,6 +1,0 @@
-{
-  "name": "app",
-  "local": ["icons", "share-icons"],
-  "styles": ["app.styl"],
-  "scripts": ["index.js"]
-}

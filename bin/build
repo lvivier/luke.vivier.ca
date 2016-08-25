@@ -4,16 +4,17 @@
  * Dependencies
  */
 
+var strftime = require('strftime').timezone('-0800')
 var collections = require('metalsmith-collections')
 var permalinks = require('metalsmith-permalinks')
-var templates = require('metalsmith-templates')
 var excerpts = require('metalsmith-excerpts')
 var markdown = require('metalsmith-markdown')
+var layouts = require('metalsmith-layouts')
 var drafts = require('metalsmith-drafts')
-var build = require('../lib/build')
+var stylus = require('metalsmith-stylus')
 var metal = require('metalsmith')
 var join = require('path').join
-
+var nib = require('nib')
 
 /**
  * Config
@@ -22,21 +23,20 @@ var join = require('path').join
 var cwd = process.cwd()
 var out = join(cwd, 'build')
 var dev = (process.env.NODE_ENV === 'development')
-
+var log = (s) => process.stdout.write(s)
 
 /**
  * View helpers and metadata
  */
 
-var helpers = {time: require('strftime')}
-
+var helpers = {time: strftime}
 
 /**
  * Component builder
  */
 
-build(cwd, out, dev, done)
-
+// build(cwd, out, dev, done)
+log('building...')
 
 /**
  * Metalsmith
@@ -44,19 +44,23 @@ build(cwd, out, dev, done)
 
 metal(cwd)
   .metadata(helpers)
+  .use(stylus({use:[nib()]}))
   .use(drafts())
   .use(markdown())
   .use(excerpts())
-  .use(permalinks({pattern: '/:slug'}))
+  .use(permalinks({pattern: '/:slug', relative:false}))
   .use(collections({articles: {sortBy:'date', reverse:true}}))
-  .use(templates({engine:'jade', pretty:true, directory:'lib/views'}))
+  .use(layouts({engine:'pug', pretty:true, directory:'views'}))
   .build(done)
-
 
 /**
  * Error-handler
  */
 
+var doneCalls = 0
+
 function done (err) {
+  doneCalls++
   if (err) throw err
+  if (doneCalls === 1) log('done\n')
 }

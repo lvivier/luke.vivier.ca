@@ -1,7 +1,7 @@
 ---
 title: {title}
 collection: articles
-template: article.jade
+layout: article.pug
 date: {date}
 draft: true
 ---
