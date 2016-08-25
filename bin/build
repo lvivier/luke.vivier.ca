@@ -31,11 +31,6 @@ var log = (s) => process.stdout.write(s)
 
 var helpers = {time: strftime}
 
-/**
- * Component builder
- */
-
-// build(cwd, out, dev, done)
 log('building...')
 
 /**
@@ -48,7 +43,7 @@ metal(cwd)
   .use(drafts())
   .use(markdown())
   .use(excerpts())
-  .use(permalinks({pattern: '/:slug', relative:false}))
+  .use(permalinks({pattern:'/:slug', relative:false}))
   .use(collections({articles: {sortBy:'date', reverse:true}}))
   .use(layouts({engine:'pug', pretty:true, directory:'views'}))
   .build(done)
@@ -57,10 +52,7 @@ metal(cwd)
  * Error-handler
  */
 
-var doneCalls = 0
-
 function done (err) {
-  doneCalls++
   if (err) throw err
-  if (doneCalls === 1) log('done\n')
+  log('done\n')
 }
