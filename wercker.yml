@@ -1,4 +1,4 @@
-box: wercker/nodejs
+box: nahody/nodejs@5.9.0
 build:
   steps:
     - npm-install
