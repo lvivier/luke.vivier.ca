@@ -1,9 +1,0 @@
-
-vivier.ca:80 {
-  redir luke.vivier.ca
-}
-
-luke.vivier.ca {
-  root ./www
-  ext .html .jpg .png
-}
